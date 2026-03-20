@@ -1,0 +1,207 @@
+import React from 'react';
+import { 
+  AlertTriangle, 
+  Settings, 
+  TrendingDown, 
+  CheckCircle2, 
+  UserPlus, 
+  Target, 
+  Clock, 
+  ChefHat, 
+  TrendingUp,
+  LayoutList,
+  MessageCircle,
+  BarChart3,
+  Search
+} from 'lucide-react';
+
+const App = () => {
+  return (
+    <div className="min-h-screen bg-stone-100 py-10 px-4 flex justify-center font-sans text-stone-800">
+      {/* A4 Container */}
+      <div className="bg-white w-full max-w-[850px] shadow-2xl overflow-hidden relative border border-stone-200 pb-12">
+        
+        {/* Hero Header with Background Photo */}
+        <div className="relative h-64 w-full flex items-center justify-center overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1000" 
+            alt="Fondo Panadería" 
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
+          />
+          <header className="relative z-10 text-center px-6">
+            <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2">
+              Panadería <span className="text-amber-400">Ajuste Operativo</span>
+            </h1>
+            <div className="h-1 w-24 bg-amber-500 mx-auto mb-4"></div>
+            <p className="text-lg md:text-xl text-stone-200 font-medium italic">
+              "Cuidar el negocio sin exigirte al máximo todos los días"
+            </p>
+          </header>
+        </div>
+
+        <main className="p-8 md:p-12 space-y-10">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* BLOQUE 1: Situación Actual */}
+            <section className="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden group">
+              <div className="bg-red-600 p-4 text-white flex items-center gap-3">
+                <AlertTriangle size={24} />
+                <h2 className="font-bold uppercase tracking-wider">1. Situación Actual</h2>
+              </div>
+              <div className="p-6 space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-500 font-bold mt-1">•</span>
+                    <span className="leading-tight">Alta carga física diaria y horarios de producción exigentes.</span>
+                  </li>
+                  <li className="flex items-start gap-3 italic text-stone-500">
+                    <AlertTriangle size={16} className="text-red-400 mt-1 flex-shrink-0" />
+                    <span>Riesgo: si se frena todo, cuesta mucho volver a arrancar.</span>
+                  </li>
+                </ul>
+                <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500 italic text-sm">
+                  <strong>El problema:</strong> No es el negocio en sí, es el nivel de exigencia actual que se vuelve insostenible.
+                </div>
+              </div>
+            </section>
+
+            {/* BLOQUE 2: Propuesta */}
+            <section className="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden">
+              <div className="bg-amber-600 p-4 text-white flex items-center gap-3">
+                <Settings size={24} />
+                <h2 className="font-bold uppercase tracking-wider">2. La Propuesta</h2>
+              </div>
+              <div className="p-6 space-y-4 relative">
+                <p className="font-bold text-amber-800 border-b border-amber-100 pb-2">
+                  Adaptación Temporal del Modelo
+                </p>
+                <div className="space-y-2">
+                  {[
+                    "Reducir productos de alta complejidad física.",
+                    "Mantener artículos de alto margen y rotación.",
+                    "Optimizar la operación junto a Daniela."
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm">
+                      <CheckCircle2 size={16} className="text-amber-500" />
+                      <span>{text}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-amber-100 text-amber-900 p-3 rounded font-black text-center text-sm uppercase tracking-widest mt-4">
+                  🎯 Objetivo: Sostener con menos desgaste
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* BLOQUE 3: Estrategia de Productos (Destacado) */}
+          <section className="relative rounded-2xl overflow-hidden border border-stone-200 shadow-lg">
+            {/* Background Texture/Image for this section */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <img 
+                src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&q=80&w=800" 
+                alt="Textura Harina" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="relative z-10">
+              <div className="bg-stone-800 p-5 text-white flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <ChefHat size={28} className="text-amber-400" />
+                  <h2 className="text-xl font-bold uppercase tracking-widest">3. Estrategia de Productos</h2>
+                </div>
+                <span className="text-xs bg-stone-700 px-3 py-1 rounded-full text-stone-300">Ajuste de Margen vs Esfuerzo</span>
+              </div>
+
+              <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* REDUCIR */}
+                <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-red-100 flex flex-col h-full">
+                  <h3 className="text-red-600 font-black text-xs uppercase mb-4 flex items-center gap-2">
+                    <TrendingDown size={16} /> Pausar / Reducir
+                  </h3>
+                  <ul className="space-y-3 text-sm flex-grow">
+                    <li className="flex items-center gap-2">❌ Pan tradicional (volumen)</li>
+                    <li className="flex items-center gap-2">❌ Producción nocturna pesada</li>
+                  </ul>
+                </div>
+
+                {/* PRIORIZAR */}
+                <div className="bg-emerald-50 p-5 rounded-xl border border-emerald-200 shadow-inner flex flex-col h-full">
+                  <h3 className="text-emerald-700 font-black text-xs uppercase mb-4 flex items-center gap-2">
+                    <TrendingUp size={16} /> Priorizar
+                  </h3>
+                  <div className="grid grid-cols-1 gap-2">
+                    {['Churros', 'Tortas / Budines', 'Sandwiches', 'Facturas Simples'].map(item => (
+                      <div key={item} className="bg-white p-2 rounded border border-emerald-100 text-xs font-bold text-emerald-800">
+                        ✅ {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* EVALUAR */}
+                <div className="bg-blue-50 p-5 rounded-xl border border-blue-200 flex flex-col h-full">
+                  <h3 className="text-blue-700 font-black text-xs uppercase mb-4 flex items-center gap-2">
+                    <Search size={16} /> Evaluar
+                  </h3>
+                  <p className="text-sm text-blue-900 font-medium leading-relaxed italic">
+                    "Considerar la compra de pan ya elaborado o pan congelado para reducir horas de amasado."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* BLOQUE 4: Operatividad */}
+            <section className="space-y-4">
+              <div className="flex items-center gap-3 text-stone-700 border-b-2 border-stone-100 pb-2">
+                <Target size={24} className="text-blue-500" />
+                <h2 className="font-bold uppercase tracking-wider">4. Nueva Dinámica</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-3">
+                {[
+                  { icon: Clock, t: "Producción corta y previsible." },
+                  { icon: LayoutList, t: "Menos variedad, mayor foco." },
+                  { icon: TrendingUp, t: "Sostener ingresos con inteligencia." }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 p-3 bg-stone-50 rounded-lg">
+                    <item.icon size={20} className="text-stone-400" />
+                    <span className="text-sm font-medium">{item.t}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* BLOQUE 5: Soporte Chris & Belén */}
+            <section className="bg-stone-900 rounded-2xl p-6 text-white relative overflow-hidden">
+               {/* Background photo accent */}
+              <img 
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" 
+                alt="Café" 
+                className="absolute right-0 bottom-0 w-32 h-32 object-cover opacity-20 rounded-tl-full"
+              />
+              <div className="relative z-10">
+                <h2 className="text-amber-400 font-bold uppercase tracking-widest text-sm mb-4 border-b border-stone-700 pb-2">
+                  5. Soporte Chris & Belén
+                </h2>
+                <div className="grid grid-cols-2 gap-3 text-[10px] md:text-xs font-bold uppercase tracking-tighter">
+                  <div className="flex items-center gap-2 bg-stone-800 p-2 rounded"><BarChart3 size={14} /> Gestión de Números</div>
+                  <div className="flex items-center gap-2 bg-stone-800 p-2 rounded"><Target size={14} /> Definir Claves</div>
+                  <div className="flex items-center gap-2 bg-stone-800 p-2 rounded"><TrendingUp size={14} /> Ajustar Precios</div>
+                  <div className="flex items-center gap-2 bg-stone-800 p-2 rounded"><MessageCircle size={14} /> Comunicación</div>
+                </div>
+                <p className="text-[10px] mt-4 text-stone-400 italic">"Acompañar estratégicamente sin invadir la operación"</p>
+              </div>
+            </section>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  );
+};
+
+export default App;
